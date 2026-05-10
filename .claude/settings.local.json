@@ -1,7 +1,25 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --yes)"
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --yes)",
+      "Bash(npm run *)",
+      "Bash(Start-Sleep -Seconds 4)",
+      "Bash(Get-Content \"C:\\\\Users\\\\yunan\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-yunan-Documents-Wikimedia-5-SubWiki-situs-komunitas\\\\0bd40eb3-deb7-4a67-a385-625fa81642b4\\\\tasks\\\\bi0pdg6t8.output\" -ErrorAction SilentlyContinue)",
+      "Bash(Get-Process -Name \"node\" -ErrorAction SilentlyContinue)",
+      "Bash(Stop-Process -Force)",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(pkill -f \"node.*next\")",
+      "Bash(taskkill *)",
+      "PowerShell(Stop-Process *)",
+      "Bash(node -e \"const p = require\\('./package.json'\\); console.log\\(p.dependencies?.next || p.devDependencies?.next\\)\")",
+      "Bash(npx next *)",
+      "Bash(node -e \"const p=require\\('./package.json'\\); console.log\\(JSON.stringify\\({next:p.dependencies?.next, deps:Object.keys\\(p.dependencies||{}\\)},null,2\\)\\)\")",
+      "Bash(Get-ChildItem *)",
+      "Bash(xargs grep -l \"dynamic\")",
+      "Bash(npm install *)",
+      "Bash(npx tsc *)",
+      "Bash(New-Item -ItemType Directory -Path \"C:\\\\Users\\\\yunan\\\\Documents\\\\Wikimedia\\\\5-SubWiki\\\\situs-komunitas\\\\app\\\\dokumentasi\" -Force)",
+      "Bash(Out-Null)"
     ]
   }
 }
