@@ -88,12 +88,12 @@ export default function DariKomunitasSection() {
           </p>
         </div>
 
-        {/* Card — tidak ada animasi pada card itu sendiri */}
+        {/* Card */}
         <div className="relative">
-          <div className="grid grid-cols-[1fr_3fr] rounded-2xl overflow-hidden shadow-md border border-gray-200 bg-white">
+          <div className="flex flex-col lg:grid lg:grid-cols-[1fr_3fr] rounded-2xl overflow-hidden shadow-md border border-gray-200 bg-white">
 
-            {/* Kiri — foto sliding */}
-            <div className="relative overflow-hidden aspect-square">
+            {/* Foto sliding */}
+            <div className="relative overflow-hidden aspect-video lg:aspect-square">
               <div
                 className="flex h-full"
                 style={{
@@ -135,22 +135,22 @@ export default function DariKomunitasSection() {
               </div>
             </div>
 
-            {/* Kanan — keterangan, fade saat berganti */}
+            {/* Keterangan — fade saat berganti */}
             <div
-              className="flex flex-col justify-center px-8 py-10 lg:px-12 lg:py-12"
+              className="flex flex-col justify-center px-6 py-7 lg:px-12 lg:py-12"
               style={{
                 opacity: teksVisible ? 1 : 0,
                 transition: "opacity 0.25s ease",
               }}
             >
-              <p className="text-xs font-semibold uppercase tracking-widest text-blue-500 mb-3">
+              <p className="text-xs font-semibold uppercase tracking-widest text-blue-500 mb-2">
                 {item.penghargaan}
               </p>
-              <h3 className="text-2xl lg:text-3xl font-extrabold text-gray-950 leading-tight mb-5">
+              <h3 className="text-xl lg:text-3xl font-extrabold text-gray-950 leading-tight mb-4">
                 {item.nama}
               </h3>
-              <hr className="border-gray-100 mb-5" />
-              <p className="text-sm text-gray-500 leading-relaxed max-w-prose">
+              <hr className="border-gray-100 mb-4" />
+              <p className="text-sm text-gray-500 leading-relaxed">
                 {item.deskripsi}
               </p>
             </div>
