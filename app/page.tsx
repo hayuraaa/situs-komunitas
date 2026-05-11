@@ -3,6 +3,7 @@ import HeroSection from "./components/HeroSection";
 import KegiatanSection from "./components/KegiatanSection";
 import QuoteBanner from "./components/QuoteBanner";
 import MapSection from "./components/MapSection";
+import DariKomunitasSection from "./components/DariKomunitasSection";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
         <KegiatanSection />
         <QuoteBanner />
         <MapSection />
+        <DariKomunitasSection />
       </main>
       <Footer />
     </>
