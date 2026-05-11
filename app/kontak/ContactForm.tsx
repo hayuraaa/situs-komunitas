@@ -1,31 +1,73 @@
 'use client'
 
-import { useActionState, useEffect, useState } from 'react'
-import { submitContact, type ContactState } from './actions'
+import { useState, useEffect } from 'react'
 
-const initialState: ContactState = { status: 'idle', message: '' }
+type Status = 'idle' | 'success' | 'error'
 
 const inputClass =
   'w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#006A9F] focus:border-transparent outline-none transition bg-white text-sm'
 
 export default function ContactForm() {
-  const [state, action, pending] = useActionState(submitContact, initialState)
-  const [formKey, setFormKey] = useState(0)
+  const [status, setStatus] = useState<Status>('idle')
+  const [statusMessage, setStatusMessage] = useState('')
+  const [pending, setPending] = useState(false)
   const [showAlert, setShowAlert] = useState(false)
+  const [formKey, setFormKey] = useState(0)
 
   useEffect(() => {
-    if (state.status === 'idle') return
+    if (status === 'idle') return
     setShowAlert(true)
-    if (state.status === 'success') setFormKey((k) => k + 1)
+    if (status === 'success') setFormKey((k) => k + 1)
     const t = setTimeout(() => setShowAlert(false), 5000)
     return () => clearTimeout(t)
-  }, [state])
+  }, [status, statusMessage])
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    const data = new FormData(e.currentTarget)
+    const name = (data.get('name') as string)?.trim()
+    const email = (data.get('email') as string)?.trim() || null
+    const phone = (data.get('phone') as string)?.trim()
+    const message = (data.get('message') as string)?.trim()
+
+    if (!name || !phone || !message) {
+      setStatus('error')
+      setStatusMessage('Mohon lengkapi semua kolom yang wajib diisi.')
+      return
+    }
+
+    setPending(true)
+    try {
+      const res = await fetch(
+        'https://dashboard.wikimedia.or.id/api/v1/contact/situs-komunitas',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, phone, message }),
+          signal: AbortSignal.timeout(10000),
+        }
+      )
+      const json = await res.json()
+      if (res.ok && json.success) {
+        setStatus('success')
+        setStatusMessage('Terima kasih! Pesan Anda telah berhasil dikirim.')
+      } else {
+        setStatus('error')
+        setStatusMessage(json.message ?? 'Maaf, terjadi kesalahan. Silakan coba lagi.')
+      }
+    } catch {
+      setStatus('error')
+      setStatusMessage('Maaf, terjadi kesalahan koneksi.')
+    } finally {
+      setPending(false)
+    }
+  }
 
   return (
     <div className="bg-gray-50 rounded-2xl p-8 border border-gray-200">
 
       {/* Success alert */}
-      {showAlert && state.status === 'success' && (
+      {showAlert && status === 'success' && (
         <div className="mb-6 bg-green-50 border-l-4 border-green-500 p-4 rounded-lg">
           <div className="flex items-start gap-3">
             <svg className="h-5 w-5 text-green-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
@@ -33,14 +75,14 @@ export default function ContactForm() {
             </svg>
             <div>
               <p className="text-sm font-semibold text-green-800">Berhasil Terkirim!</p>
-              <p className="text-xs text-green-700 mt-0.5">{state.message}</p>
+              <p className="text-xs text-green-700 mt-0.5">{statusMessage}</p>
             </div>
           </div>
         </div>
       )}
 
       {/* Error alert */}
-      {showAlert && state.status === 'error' && (
+      {showAlert && status === 'error' && (
         <div className="mb-6 bg-red-50 border-l-4 border-red-500 p-4 rounded-lg">
           <div className="flex items-start gap-3">
             <svg className="h-5 w-5 text-red-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
@@ -48,13 +90,13 @@ export default function ContactForm() {
             </svg>
             <div>
               <p className="text-sm font-semibold text-red-800">Gagal Terkirim</p>
-              <p className="text-xs text-red-700 mt-0.5">{state.message}</p>
+              <p className="text-xs text-red-700 mt-0.5">{statusMessage}</p>
             </div>
           </div>
         </div>
       )}
 
-      <form key={formKey} action={action} className="space-y-5">
+      <form key={formKey} onSubmit={handleSubmit} className="space-y-5">
 
         {/* Nama */}
         <div>
