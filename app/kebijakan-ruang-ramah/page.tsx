@@ -48,11 +48,11 @@ export default function KebijakanRuangRamahPage() {
         {/* Hero */}
         <section className="bg-[#f0f5ff] border-b border-[#dbe8f8]">
           <div className="max-w-6xl mx-auto px-6 lg:px-8 py-16 lg:py-24">
-            <div>
+            <div className="text-center">
               <h1 className="text-4xl lg:text-5xl font-extrabold text-gray-950 leading-tight mb-5">
                 Kebijakan Ruang Ramah
               </h1>
-              <p className="text-gray-500 text-base lg:text-lg leading-relaxed max-w-3xl">
+              <p className="text-gray-500 text-base lg:text-lg leading-relaxed max-w-3xl mx-auto">
                 Kebijakan ruang ramah acara adalah panduan untuk pertemuan komunitas
                 Wikimedia yang semua peserta diharapkan dapat memberikan pengalaman
                 yang positif dan suasana yang saling mendukung bagi semua peserta

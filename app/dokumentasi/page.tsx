@@ -91,14 +91,12 @@ export default async function DokumentasiPage({
         {/* Page Hero */}
         <section className="bg-[#f0f5ff] border-b border-[#dbe8f8]">
           <div className="max-w-6xl mx-auto px-6 lg:px-8 py-16 lg:py-24">
-            <div>
+            <div className="text-center">
               <h1 className="text-4xl lg:text-5xl font-extrabold text-gray-950 leading-tight mb-5">
                 Dokumentasi Kegiatan
               </h1>
-              <p className="text-gray-500 text-base lg:text-lg leading-relaxed max-w-3xl">
-                Kumpulan berita dan cerita dari komunitas Wikimedia Indonesia —
-                merekam perjalanan, kolaborasi, dan kontribusi para sukarelawan
-                dalam memperkuat pengetahuan terbuka.
+              <p className="text-gray-500 text-base lg:text-lg leading-relaxed max-w-3xl mx-auto">
+                Kumpulan berita dan cerita dari komunitas Wikimedia Indonesia yang merekam perjalanan, kolaborasi, dan kontribusi para sukarelawan dalam mengembangkan pengetahuan terbuka bagi semua orang.
               </p>
             </div>
           </div>

@@ -8,28 +8,28 @@ const penerima = [
     penghargaan: "Sukarelawan Teraktif 2025",
     deskripsi:
       "Aktif dalam berbagai kegiatan komunitas, kompetisi, serta menginisiasi WikiKlinik untuk membantu kontributor baru. Pada 2025, tercatat 331.787 suntingan di berbagai proyek Wikimedia.",
-    foto: "https://picsum.photos/seed/rifqi/600/800",
+    foto: "/Muhammad%20Rifqi%20Saifudin.webp",
   },
   {
     nama: "Komunitas Wikimedia Yogyakarta",
     penghargaan: "Komunitas Teraktif 2025",
     deskripsi:
       "Aktif menyelenggarakan rapat, kegiatan menyunting bersama, kompetisi, program pengembangan konten, dan hibah dari Wikimedia Indonesia dan Wikimedia Foundation.",
-    foto: "https://picsum.photos/seed/yogya/600/800",
+    foto: "/Komunitas%20Wikimedia%20Yogyakarta.webp",
   },
   {
     nama: "Komunitas Wikisource Indonesia",
     penghargaan: "Komunitas Media Sosial Teraktif 2025",
     deskripsi:
       "Aktif memanfaatkan akun @wikisource.id untuk berbagi informasi, panduan, dan materi edukatif. Sepanjang 2025 komunitas ini mengunggah sebanyak 75 konten.",
-    foto: "https://picsum.photos/seed/wikisource/600/800",
+    foto: "/Komunitas%20Wikisource%20Indonesia.webp",
   },
   {
     nama: "KlubWiki Universitas Brawijaya",
     penghargaan: "Komunitas Pendatang Baru Terbanyak 2025",
     deskripsi:
       "Mencatat 20 anggota baru. Keterlibatan anggota baru berkembang dari peserta menjadi panitia melalui aktivitas komunitas.",
-    foto: "https://picsum.photos/seed/brawijaya/600/800",
+    foto: "/KlubWiki%20Universitas%20Brawijaya.webp",
   },
 ];
 
@@ -82,9 +82,7 @@ export default function DariKomunitasSection() {
             Dari komunitas, untuk dampak yang lebih luas
           </h2>
           <p className="text-gray-500 text-base leading-relaxed">
-            Terdapat berbagai cara untuk berkontribusi di Wikimedia Indonesia,
-            baik secara individu maupun melalui komunitas, dengan semangat
-            membebaskan pengetahuan.
+            Terdapat berbagai cara untuk berkontribusi di Wikimedia Indonesia, baik secara individu maupun bersama komunitas.
           </p>
         </div>
 

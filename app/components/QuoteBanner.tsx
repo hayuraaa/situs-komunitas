@@ -10,8 +10,7 @@ export default function QuoteBanner() {
           &ldquo;
         </p>
         <p className="font-semibold italic text-2xl sm:text-3xl leading-snug text-white/90">
-          Bayangkan suatu dunia tempat setiap manusia bisa berbagi semua
-          pengetahuan secara bebas
+          Bayangkan suatu dunia tempat setiap manusia bisa berbagi beragam pengetahuan secara bebas
         </p>
       </div>
     </section>

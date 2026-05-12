@@ -38,9 +38,7 @@ export default function HeroSection() {
               className="animate-fade-up text-gray-500 text-base sm:text-lg leading-relaxed max-w-lg"
               style={{ animationDelay: "0.25s" }}
             >
-              Di sini, setiap orang memulai perjalanannya untuk membebaskan
-              pengetahuan. Komunitas Wikimedia Indonesia adalah ruang tumbuh
-              bersama — tempat ide, pengetahuan, dan kolaborasi bertemu.
+              Di sini, setiap orang memulai perjalanan untuk membebaskan pengetahuan. Komunitas Wikimedia Indonesia hadir sebagai ruang untuk belajar, bertumbuh, dan berkolaborasi bersama dalam membangun pengetahuan terbuka yang bisa diakses oleh semua orang.
             </p>
           </div>
 
@@ -51,7 +49,7 @@ export default function HeroSection() {
           >
             <div className="relative rounded-xl overflow-hidden shadow-lg aspect-[4/3]">
               <Image
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/WikiNusantara_2026_%E2%80%93_Group_Photo_at_Closing_Session_%28Day_2%2C_12_April_2026%29_-_6.jpg/1280px-WikiNusantara_2026_%E2%80%93_Group_Photo_at_Closing_Session_%28Day_2%2C_12_April_2026%29_-_6.jpg"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/WikiNusantara_2026_%E2%80%93_Group_Photo_at_Opening_Session_%28Day_1%2C_11_April_2026%29_-_5.jpg/1280px-WikiNusantara_2026_%E2%80%93_Group_Photo_at_Opening_Session_%28Day_1%2C_11_April_2026%29_-_5.jpg"
                 alt="WikiNusantara 2026"
                 width={800}
                 height={600}

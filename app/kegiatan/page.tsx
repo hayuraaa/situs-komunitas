@@ -68,82 +68,82 @@ export default function KegiatanPage() {
         {/* Page Hero */}
         <section className="bg-[#f0f5ff] border-b border-[#dbe8f8]">
           <div className="max-w-6xl mx-auto px-6 lg:px-8 py-16 lg:py-24">
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 items-end">
-              <div>
-                <h1 className="text-4xl lg:text-5xl font-extrabold text-gray-950 leading-tight mb-5">
-                  Kegiatan Komunitas
-                </h1>
-                <p className="text-gray-500 text-base lg:text-lg leading-relaxed max-w-3xl">
-                  Komunitas Wikimedia Indonesia mendorong partisipasi sukarelawan serta
-                  mendukung komunitas yang aktif menyunting, berbagi, dan menjaga kualitas
-                  informasi di proyek Wikimedia. Dukungan ini diwujudkan melalui berbagai
-                  kegiatan, mulai dari mentorship bagi anggota komunitas untuk saling
-                  belajar dan berkembang, penguatan komunitas daerah melalui hibah dan
-                  pertemuan, hingga forum daring dan luring yang menjadi ruang diskusi
-                  terbuka dan kolaboratif.
-                </p>
-              </div>
+            <div className="text-center">
+              <h1 className="text-4xl lg:text-5xl font-extrabold text-gray-950 leading-tight mb-5">
+                Kegiatan Komunitas
+              </h1>
+              <p className="text-gray-500 text-base lg:text-lg leading-relaxed max-w-3xl mx-auto">
+                Komunitas Wikimedia Indonesia mendorong partisipasi sukarelawan serta
+                mendukung komunitas yang aktif menyunting, berbagi, dan menjaga kualitas
+                informasi di proyek Wikimedia. Dukungan ini diwujudkan melalui berbagai
+                kegiatan, mulai dari mentorship bagi anggota komunitas untuk saling
+                belajar dan berkembang, penguatan komunitas daerah melalui hibah dan
+                pertemuan, hingga forum daring dan luring yang menjadi ruang diskusi
+                terbuka dan kolaboratif.
+              </p>
             </div>
           </div>
         </section>
 
-        {/* Activities Grid */}
+        {/* Activities List */}
         <section className="py-16 lg:py-24 bg-white">
           <div className="max-w-6xl mx-auto px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-10">
-              {activities.map((activity, index) => (
-                <article
-                  key={activity.title}
-                  className="group flex flex-col rounded-2xl overflow-hidden bg-white border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-                >
-                  {/* Image */}
-                  <div className="relative overflow-hidden bg-gray-100" style={{ aspectRatio: "16/10" }}>
-                    <img
-                      src={activity.image}
-                      alt={activity.title}
-                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                    />
-                    {/* Number badge */}
-                    <div className="absolute top-3 left-3 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-sm">
-                      <span className="text-[11px] font-extrabold text-[#006A9F]">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
+            <div className="flex flex-col gap-10">
+              {activities.map((activity, index) => {
+                const isEven = index % 2 === 0;
+                return (
+                  <article
+                    key={activity.title}
+                    className="group flex flex-col lg:flex-row rounded-2xl overflow-hidden bg-white border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300"
+                  >
+                    {/* Image */}
+                    <div
+                      className={`relative overflow-hidden bg-gray-100 w-full lg:w-[45%] shrink-0 ${isEven ? "lg:order-1" : "lg:order-2"}`}
+                      style={{ aspectRatio: "16/10" }}
+                    >
+                      <img
+                        src={activity.image}
+                        alt={activity.title}
+                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                      />
                     </div>
-                  </div>
 
-                  {/* Content */}
-                  <div className="flex flex-col flex-1 p-6">
-                    <h2 className="text-[17px] font-bold text-gray-900 mb-2.5 leading-snug">
-                      {activity.title}
-                    </h2>
-                    <p className="text-sm text-gray-500 leading-relaxed flex-1">
-                      {activity.description}
-                    </p>
+                    {/* Content */}
+                    <div
+                      className={`flex flex-col justify-center flex-1 px-8 py-10 lg:px-12 lg:py-12 ${isEven ? "lg:order-2" : "lg:order-1"}`}
+                    >
+                      <h2 className="text-2xl lg:text-3xl font-extrabold text-gray-900 mb-4 leading-snug">
+                        {activity.title}
+                      </h2>
+                      <p className="text-base text-gray-500 leading-relaxed">
+                        {activity.description}
+                      </p>
 
-                    {activity.href && (
-                      <div className="mt-5 pt-5 border-t border-gray-100">
-                        <a
-                          href={activity.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#006A9F] hover:text-[#005080] transition-colors group/link"
-                        >
-                          Pelajari lebih lanjut
-                          <svg
-                            className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 transition-transform"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
+                      {activity.href && (
+                        <div className="mt-7">
+                          <a
+                            href={activity.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#006A9F] hover:text-[#005080] transition-colors group/link"
                           >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                          </svg>
-                        </a>
-                      </div>
-                    )}
-                  </div>
-                </article>
-              ))}
+                            Pelajari lebih lanjut
+                            <svg
+                              className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 transition-transform"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                          </a>
+                        </div>
+                      )}
+                    </div>
+                  </article>
+                );
+              })}
             </div>
           </div>
         </section>
