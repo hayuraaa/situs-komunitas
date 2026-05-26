@@ -75,8 +75,8 @@ export default function MapClient() {
       L.control.zoom({ position: "topright" }).addTo(map);
 
       L.tileLayer(
-        "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
-        { subdomains: "abcd", maxZoom: 20 }
+        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+        { maxZoom: 19 }
       ).addTo(map);
 
       communities
@@ -155,7 +155,7 @@ export default function MapClient() {
         )}
         <div ref={containerRef} style={{ height: "100%", width: "100%" }} />
         <div className="absolute bottom-1 right-[46px] z-[1000] text-[9px] text-gray-400 pointer-events-none">
-          © OpenStreetMap contributors © CARTO
+          © OpenStreetMap contributors
         </div>
       </div>
 
