@@ -7,28 +7,28 @@ const penerima = [
     nama: "Muhammad Rifqi Saifudin",
     penghargaan: "Sukarelawan Teraktif 2025",
     deskripsi:
-      "Aktif dalam berbagai kegiatan komunitas, kompetisi, serta menginisiasi WikiKlinik untuk membantu kontributor baru. Pada 2025, tercatat 331.787 suntingan di berbagai proyek Wikimedia.",
+      "Rifqi aktif dalam berbagai kegiatan komunitas dan kompetisi, serta menginisiasi WikiKlinik untuk membantu kontributor baru. Pada 2025, Rifqi tercatat telah melakukan 331.787 suntingan di berbagai proyek Wikimedia.",
     foto: "/Muhammad%20Rifqi%20Saifudin.webp",
   },
   {
     nama: "Komunitas Wikimedia Yogyakarta",
     penghargaan: "Komunitas Teraktif 2025",
     deskripsi:
-      "Aktif menyelenggarakan rapat, kegiatan menyunting bersama, kompetisi, program pengembangan konten, dan hibah dari Wikimedia Indonesia dan Wikimedia Foundation.",
+      "Komunitas Wikimedia Yogyakarta aktif menyelenggarakan rapat komunitas, kegiatan menyunting bersama, kompetisi, program pengembangan konten, serta berbagai program hibah dari Wikimedia Indonesia dan Wikimedia Foundation.",
     foto: "/Komunitas%20Wikimedia%20Yogyakarta.webp",
   },
   {
     nama: "Komunitas Wikisource Indonesia",
     penghargaan: "Komunitas Media Sosial Teraktif 2025",
     deskripsi:
-      "Aktif memanfaatkan akun @wikisource.id untuk berbagi informasi, panduan, dan materi edukatif. Sepanjang 2025 komunitas ini mengunggah sebanyak 75 konten.",
+      "Komunitas Wikisource Indonesia aktif memanfaatkan akun @wikisource.id untuk membagikan informasi, panduan, dan materi edukatif. Sepanjang 2025, komunitas ini telah mengunggah sebanyak 75 konten.",
     foto: "/Komunitas%20Wikisource%20Indonesia.webp",
   },
   {
     nama: "KlubWiki Universitas Brawijaya",
     penghargaan: "Komunitas Pendatang Baru Terbanyak 2025",
     deskripsi:
-      "Mencatat 20 anggota baru. Keterlibatan anggota baru berkembang dari peserta menjadi panitia melalui aktivitas komunitas.",
+      "Sepanjang 2025, KlubWiki UB mendapatkan penambahan 20 anggota baru. Keterlibatan anggota baru juga berkembang, dari awalnya sebagai peserta hingga menjadi panitia dalam berbagai aktivitas komunitas.",
     foto: "/KlubWiki%20Universitas%20Brawijaya.webp",
   },
 ];
@@ -57,7 +57,7 @@ export default function DariKomunitasSection() {
           setTeksVisible(true);
         }, 250);
       }
-    }, 2800);
+    }, 5000);
   }, []);
 
   useEffect(() => {

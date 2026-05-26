@@ -14,8 +14,8 @@ export default function Home() {
         <HeroSection />
         <KegiatanSection />
         <QuoteBanner />
-        <MapSection />
         <DariKomunitasSection />
+        <MapSection />
       </main>
       <Footer />
     </>
