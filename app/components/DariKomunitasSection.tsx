@@ -57,7 +57,7 @@ export default function DariKomunitasSection() {
           setTeksVisible(true);
         }, 250);
       }
-    }, 4000);
+    }, 2800);
   }, []);
 
   useEffect(() => {
