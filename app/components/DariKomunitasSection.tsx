@@ -71,7 +71,7 @@ export default function DariKomunitasSection() {
 
   return (
     <section
-      className="bg-gray-50 py-20 lg:py-28"
+      className="bg-gray-50 py-16 lg:py-20"
       onMouseEnter={() => { isPausedRef.current = true; }}
       onMouseLeave={() => { isPausedRef.current = false; }}
     >

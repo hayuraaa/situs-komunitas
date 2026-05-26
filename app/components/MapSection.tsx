@@ -13,7 +13,7 @@ const MapClient = dynamic(() => import("./MapClient"), {
 
 export default function MapSection() {
   return (
-    <section className="bg-white py-20 lg:py-28">
+    <section className="bg-white py-16 lg:py-20">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-[37fr_63fr] gap-2 lg:gap-8 items-end mb-10">
           <h2 className="text-4xl font-extrabold text-gray-950 leading-tight">
@@ -23,6 +23,8 @@ export default function MapSection() {
             Jelajahi sebaran komunitas Wikimedia Indonesia di berbagai daerah dan temukan ruang kolaborasi terdekat untuk mulai berpartisipasi.
           </p>
         </div>
+      </div>
+      <div className="max-w-5xl mx-auto px-6 lg:px-8">
         <MapClient />
       </div>
     </section>
